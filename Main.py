@@ -176,7 +176,7 @@ def Promote_Employ():
         print("7.Employee Salary: ", r[6])
         print("\n")
         Choice = input("Which Field you want to edit: ")
-        
+
 
 
 
