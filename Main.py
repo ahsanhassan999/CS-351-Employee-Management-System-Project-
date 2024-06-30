@@ -130,20 +130,54 @@ def Update_Employ():
         press = input("Press Any Key To Continue..")
         menu()
     else:
+
         Email_Id = input("Enter Employee Email ID: ")
         Phone_no = input("Enter Employee Phone No.: ")
         Address = input("Enter Employee Address: ")
-        # Updating Employee details in empdata Table
-        sql = 'UPDATE Employee_Data set Email_Id = %s, Phone_no = %s, Address = %s where Id = %s'
-        data = (Email_Id, Phone_no, Address, Id)
-        c = con.cursor()
+        Post = input("Enter Employee Post: ")
+        Salary  = int(input("Enter Employee Salary: "))
 
-        # Executing the sql query
-        c.execute(sql, data)
+        if Email_Id != "":
+            sql = 'UPDATE Employee_Data set Email_Id = %s Where Id = %s'
+            data = (Email_Id, Id)
+            c = con.cursor()
+            c.execute(sql, data)
+            con.commit()
+            print("Email Id Update of ID =",Id)
+        if Phone_no != "":
+            sql = 'UPDATE Employee_Data set Phone_no = %s Where Id = %s'
+            data = (Phone_no, Id)
+            c = con.cursor()
+            c.execute(sql, data)
+            con.commit()
+            print("Updated Employee Record")
+        if Address != "":
+            sql = 'UPDATE Employee_Data set Address = %s Where Id = %s'
+            data = (Address, Id)
+            c = con.cursor()
+            c.execute(sql, data)
+            con.commit()
+            print("Updated Employee Record")
+        if Post != "":
+            sql = 'UPDATE Employee_Data set Post = %s Where Id = %s'
+            data = (Post, Id)
+            c = con.cursor()
+            c.execute(sql, data)
+            con.commit()
+            print("Updated Employee Record")
+        if Salary != None:
+            sql = 'UPDATE Employee_Data set Salary = %s Where Id = %s'
+            data = (Salary, Id)
+            c = con.cursor()
+            c.execute(sql, data)
+            con.commit()
+            print("Updated Employee Record")
 
-        # commit() method to make changes in the table
-        con.commit()
-        print("Updated Employee Record")
+
+
+
+
+
         press = input("Press Any Key To Continue..")
         menu()
 
@@ -204,8 +238,7 @@ def Remove_Employ():
     # checking If Employee Id is Exit Or Not
     if (check_employee(Id) == False):
         print("Employee Record Not exists\nTry Again")
-        press = input("Press Any Key To Continue..")
-        menu()
+
     else:
         # query to delete Employee from empdata table
         sql = 'delete from Employee_Data where Id = %s'
@@ -218,8 +251,7 @@ def Remove_Employ():
         # commit() method to make changes in the empdata table
         con.commit()
         print("Employee Removed")
-        press = input("Press Any key To Continue..")
-        menu()
+
 
 
 # Function to Search_Employ
