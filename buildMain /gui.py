@@ -11,9 +11,11 @@ con = mysql.connector.connect(
     host="localhost", user="root", password="", database="Employee")
 
 
-
 import tkinter as tk
+from tkinter import *
+from tkinter import ttk
 from tkinter import messagebox
+
 
 from pathlib import Path
 
@@ -65,6 +67,12 @@ frame4.grid(row=0, column=0, sticky="nsew")
 frame5 = tk.Frame(container, bg="#FFFFFF")
 frame5.grid(row=0, column=0, sticky="nsew")
 
+
+
+# Frame 7 (Search Record)
+frame7 = tk.Frame(container, bg="#FFFFFF")
+frame7.grid(row=0, column=0, sticky="nsew")
+
 # Populate Frame 1
 canvas1 = tk.Canvas(
     frame1,
@@ -89,7 +97,7 @@ canvas1.create_text(
     14.0,
     336.0,
     anchor="nw",
-    text="CS-351 Programming Fundamentals (Project)\nGroup Members:\nSyed Ahsan Hassan Rizvi (S.No: 676514)\n43. Shahrukh Khan (S.No: 679023)\nSyed Wasif Ali Rizvi (S.No: 675454)\n68. Syed Farzam Ahmed Warsi (S.No: 677419)\n\n",
+    text="CS-351 Programming Fundamentals (Project)\nGroup Members:\n47.Syed Ahsan Hassan Rizvi (S.No: 676514)\n43. Shahrukh Khan (S.No: 679023)\n57.Syed Wasif Ali Rizvi (S.No: 675454)\n68. Syed Farzam Ahmed Warsi (S.No: 677419)\n\n",
     fill="#FFFFFF",
     font=("CatamaranRoman Bold", 16 * -1)
 )
@@ -187,7 +195,7 @@ canvas2.create_text(
     14.0,
     336.0,
     anchor="nw",
-    text="CS-351 Programming Fundamentals (Project)\nGroup Members:\nSyed Ahsan Hassan Rizvi (S.No: 676514)\n43. Shahrukh Khan (S.No: 679023)\nSyed Wasif Ali Rizvi (S.No: 675454)\n68. Syed Farzam Ahmed Warsi (S.No: 677419)\n\n",
+    text="CS-351 Programming Fundamentals (Project)\nGroup Members:\n47.Syed Ahsan Hassan Rizvi (S.No: 676514)\n43. Shahrukh Khan (S.No: 679023)\n57.Syed Wasif Ali Rizvi (S.No: 675454)\n68. Syed Farzam Ahmed Warsi (S.No: 677419)\n\n",
     fill="#FFFFFF",
     font=("CatamaranRoman Bold", 16 * -1)
 )
@@ -251,7 +259,7 @@ button_5 = tk.Button(
     image=Display_button_image,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_3 clicked"),
+    command=lambda: Display_Records(),
     relief="flat"
 )
 button_5.place(x=649.0, y=240.0, width=180.0, height=55.0)
@@ -262,7 +270,7 @@ button_6 = tk.Button(
     image=Search_button_image,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_2 clicked"),
+    command=lambda: show_frame(frame7),
     relief="flat"
 )
 button_6.place(x=446.0, y=353.0, width=180.0, height=55.0)
@@ -827,7 +835,7 @@ canvas5.create_text(
     13.999999999999886,
     336.0,
     anchor="nw",
-    text="CS-351 Programming Fundamentals (Project)\nGroup Members:\nSyed Ahsan Hassan Rizvi (S.No: 676514)\n43. Shahrukh Khan (S.No: 679023)\nSyed Wasif Ali Rizvi (S.No: 675454)\n68. Syed Farzam Ahmed Warsi (S.No: 677419)\n\n",
+    text="CS-351 Programming Fundamentals (Project)\nGroup Members:\n47.Syed Ahsan Hassan Rizvi (S.No: 676514)\n43. Shahrukh Khan (S.No: 679023)\n57.Syed Wasif Ali Rizvi (S.No: 675454)\n68. Syed Farzam Ahmed Warsi (S.No: 677419)\n\n",
     fill="#FFFFFF",
     font=("CatamaranRoman Bold", 16 * -1)
 )
@@ -935,6 +943,223 @@ canvas5.create_text(
 
 
 
+# Frame 7 (Search Record)
+
+canvas7 = tk.Canvas(
+    frame7,
+    bg = "#7C0000",
+    height = 519,
+    width = 862,
+    bd = 0,
+    highlightthickness = 0,
+    relief = "ridge"
+)
+
+canvas7.place(x = 0, y = 0)
+canvas7.create_rectangle(
+    430.9999999999999,
+    7.105427357601002e-15,
+    861.9999999999999,
+    519.0,
+    fill="#FFD6D6",
+    outline="")
+
+canvas7.create_text(
+    13.999999999999886,
+    336.0,
+    anchor="nw",
+    text="CS-351 Programming Fundamentals (Project)\nGroup Members:\n47.Syed Ahsan Hassan Rizvi (S.No: 676514)\n43. Shahrukh Khan (S.No: 679023)\n57.Syed Wasif Ali Rizvi (S.No: 675454)\n68. Syed Farzam Ahmed Warsi (S.No: 677419)\n\n",
+    fill="#FFFFFF",
+    font=("CatamaranRoman Bold", 16 * -1)
+)
+
+button_image_searchf7 = tk.PhotoImage(
+    file=relative_to_assets("Search Button.png"))
+button_searchf7 = tk.Button(
+    frame7,
+    image=button_image_searchf7,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: Search_Employ(),
+    relief="flat"
+)
+button_searchf7.place(
+    x=655.9999999999999,
+    y=353.0,
+    width=180.0,
+    height=55.0
+)
+
+
+button_image_backf7 = tk.PhotoImage(
+    file=relative_to_assets("Back Button.png"))
+button_backf7 = tk.Button(
+    frame7,
+    image=button_image_backf7,
+    borderwidth=0,
+    highlightthickness=0,
+    command=lambda: show_frame(frame2),
+    relief="flat"
+)
+button_backf7.place(
+    x=470.5,
+    y=353.0,
+    width=180.0,
+    height=55.0
+)
+
+
+
+
+canvas7.create_text(
+    13.999999999999886,
+    57.00000000000001,
+    anchor="nw",
+    text="Employee Management System",
+    fill="#FCFCFC",
+    font=("Aclonica Regular", 24 * -1)
+)
+
+canvas7.create_rectangle(
+    13.999999999999886,
+    87.0,
+    419.9999999999999,
+    92.00000000000003,
+    fill="#FCFCFC",
+    outline="")
+
+entry_image_employeeidsearch = tk.PhotoImage(
+    file=relative_to_assets("entry_1.png"))
+entry_bg_employeeidsearch = canvas7.create_image(
+    654.4999999999999,
+    252.5,
+    image=entry_image_employeeidsearch
+)
+entry_employeeidsearch = tk.Entry(
+    frame7,
+    bd=0,
+    bg="#FFFFFF",
+    fg="#000716",
+    highlightthickness=0
+)
+entry_employeeidsearch.place(
+    x=494.9999999999999,
+    y=226.0,
+    width=321.0,
+    height=55.0
+)
+
+canvas7.create_text(
+    490.9999999999999,
+    184.0,
+    anchor="nw",
+    text="Employee ID",
+    fill="#7C0000",
+    font=("Roboto Bold", 24 * -1)
+)
+
+canvas7.create_text(
+    13.999999999999886,
+    115.0,
+    anchor="nw",
+    text="The Employee Management System (EMS) automates \nthe management of employee data to enhance \nproductivity and accuracy in HR processes.",
+    fill="#FFFFFF",
+    font=("CatamaranRoman Black", 16 * -1)
+)
+
+canvas7.create_text(
+    490.9999999999999,
+    61.00000000000001,
+    anchor="nw",
+    text="Search Employee Record",
+    fill="#7C0000",
+    font=("RobotoRoman Black", 26 * -1))
+
+
+#Displaying Records
+def Display_Records():
+    window_1 = tk.Tk()
+    window_1.title("Display Records")
+    window_1.geometry("1325x300")
+
+    frame8 = tk.Frame(window_1, background="grey")
+    trv = ttk.Treeview(frame8, columns=(1, 2, 3, 4, 5, 6, 7), height=15, show="headings")
+    trv.column(1, anchor=CENTER, stretch=NO, width=50)
+    trv.column(2, anchor=CENTER, stretch=NO, width=200)
+    trv.column(3, anchor=CENTER, stretch=NO, width=250)
+    trv.column(4, anchor=CENTER, stretch=NO, width=120)
+    trv.column(5, anchor=CENTER, stretch=NO, width=500)
+    trv.column(6, anchor=CENTER, stretch=NO, width=100)
+    trv.column(7, anchor=CENTER, stretch=NO, width=100)
+
+    trv.heading(1, text="ID")
+    trv.heading(2, text="Name")
+    trv.heading(3, text="Email ID")
+    trv.heading(4, text="Phone No")
+    trv.heading(5, text="Address")
+    trv.heading(6, text="Post")
+    trv.heading(7, text="Salary (Rs/-)")
+
+    sql = "SELECT * FROM Employee_Data"
+
+    c = con.cursor()
+    # Executing the sql query
+    c.execute(sql)
+
+    # Fetching all details of all the Employees
+    r = c.fetchall()
+    for i in r:
+        trv.insert("",'end', value=(i[0], i[1], i[2], i[3], i[4], i[5], i[6]))
+
+    trv.grid(row=0, column=0)
+    frame8.grid(row=0, column=0)
+    window_1.mainloop()
+
+# Searching Records
+def Search_Employ():
+    Id = entry_employeeidsearch.get()
+    # checking If Employee Id is Exit Or Not
+    if (check_employee(Id) == False):
+        messagebox.showerror(title="Error", message="This Employee ID do not Exists!")
+
+    else:
+        window_1 = tk.Tk()
+        window_1.title("Display Records")
+        window_1.geometry("1325x300")
+
+        frame8 = tk.Frame(window_1, background="grey")
+        trv = ttk.Treeview(frame8, columns=(1, 2, 3, 4, 5, 6, 7), height=15, show="headings")
+        trv.column(1, anchor=CENTER, stretch=NO, width=50)
+        trv.column(2, anchor=CENTER, stretch=NO, width=200)
+        trv.column(3, anchor=CENTER, stretch=NO, width=250)
+        trv.column(4, anchor=CENTER, stretch=NO, width=120)
+        trv.column(5, anchor=CENTER, stretch=NO, width=500)
+        trv.column(6, anchor=CENTER, stretch=NO, width=100)
+        trv.column(7, anchor=CENTER, stretch=NO, width=100)
+
+        trv.heading(1, text="ID")
+        trv.heading(2, text="Name")
+        trv.heading(3, text="Email ID")
+        trv.heading(4, text="Phone No")
+        trv.heading(5, text="Address")
+        trv.heading(6, text="Post")
+        trv.heading(7, text="Salary (Rs/-)")
+        # query to search Employee from empdata table
+        sql = 'select * from Employee_Data where Id = %s'
+        data = (Id,)
+        c = con.cursor()
+
+        # executing the sql query
+        c.execute(sql, data)
+
+        # fetching all details of all the employee
+        r = c.fetchall()
+        for i in r:
+            trv.insert("", 'end', value=(i[0], i[1], i[2], i[3], i[4], i[5], i[6]))
+
+            trv.grid(row=0, column=0)
+            frame8.grid(row=0, column=0)
+            window_1.mainloop()
 
 
 # Function To Check if Employee With
@@ -1016,7 +1241,7 @@ def Add_Employ():
 
 # Function to Edit_Employ
 def Update_Employ():
-    print("{:>60}".format("-->> Update Employee Record <<--\n"))
+
     Id = entry_employeeid.get()
     # checking If Employee Id is Exit Or Not
     if (check_employee(Id) == False):
@@ -1068,7 +1293,7 @@ def Update_Employ():
 
 # Function to Remove Records
 def Remove_Employ():
-    print("{:>60}".format("-->> Remove Employee Record <<--\n"))
+
     Id = entry_removeid.get()
     # checking If Employee Id is Exit Or Not
     if (check_employee(Id) == False):

@@ -24,8 +24,8 @@ window.geometry("862x519")
 window.configure(bg = "#FFFFFF")
 
 
-canvas = Canvas(
-    window,
+canvas7 = tk.Canvas(
+    frame7,
     bg = "#7C0000",
     height = 519,
     width = 862,
@@ -34,8 +34,8 @@ canvas = Canvas(
     relief = "ridge"
 )
 
-canvas.place(x = 0, y = 0)
-canvas.create_rectangle(
+canvas7.place(x = 0, y = 0)
+canvas7.create_rectangle(
     430.9999999999999,
     7.105427357601002e-15,
     861.9999999999999,
@@ -43,7 +43,7 @@ canvas.create_rectangle(
     fill="#FFD6D6",
     outline="")
 
-canvas.create_text(
+canvas7.create_text(
     13.999999999999886,
     336.0,
     anchor="nw",
@@ -52,16 +52,16 @@ canvas.create_text(
     font=("CatamaranRoman Bold", 16 * -1)
 )
 
-button_image_removeepmloyeef5 = PhotoImage(
-    file=relative_to_assets("Remove Record Button.png"))
-button_removeemployeef5 = Button(
-    image=button_image_removeepmloyeef5,
+button_image_searchf7 = PhotoImage(
+    file=relative_to_assets("button_1.png"))
+button_searchf7 = Button(
+    image=button_image_searchf7,
     borderwidth=0,
     highlightthickness=0,
     command=lambda: print("button_1 clicked"),
     relief="flat"
 )
-button_removeemployeef5.place(
+button_searchf7.place(
     x=564.9999999999999,
     y=353.0,
     width=180.0,
@@ -85,22 +85,22 @@ canvas.create_rectangle(
     fill="#FCFCFC",
     outline="")
 
-entry_image_removeid = PhotoImage(
+entry_image_1 = PhotoImage(
     file=relative_to_assets("entry_1.png"))
-entry_bg_removeid = canvas.create_image(
+entry_bg_1 = canvas.create_image(
     654.4999999999999,
     252.5,
-    image=entry_image_removeid
+    image=entry_image_1
 )
-entry_removeid = Entry(
+entry_1 = Entry(
     bd=0,
     bg="#FFFFFF",
     fg="#000716",
     highlightthickness=0
 )
-entry_removeid.place(
-    x=493.9999999999999,
-    y=225.0,
+entry_1.place(
+    x=494.9999999999999,
+    y=226.0,
     width=321.0,
     height=55.0
 )
@@ -127,7 +127,7 @@ canvas.create_text(
     490.9999999999999,
     61.00000000000001,
     anchor="nw",
-    text="Remove Employee Record",
+    text="Search Employee Record",
     fill="#7C0000",
     font=("RobotoRoman Black", 26 * -1)
 )
