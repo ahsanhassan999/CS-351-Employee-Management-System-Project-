@@ -1,6 +1,6 @@
 
 
-# Employee Management System Using Python - Sagar Developer
+# Employee Management System Using Python
 
 
 # importing mysql connector
@@ -27,8 +27,7 @@ def show_frame(frame):
 
 # Define the relative_to_assets function
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(
-    r"/Users/hassanrizvi/Documents/GitHub/CS-351-Employee-Management-System-Project-/buildMain /assets/frame0")
+ASSETS_PATH = OUTPUT_PATH / Path(r"/Users/hassanrizvi/Documents/GitHub/CS-351-Employee-Management-System-Project-/buildMain /assets/frame0")
 
 
 def relative_to_assets(path: str) -> Path:
@@ -48,6 +47,8 @@ container.pack(fill="both", expand=True)
 container.grid_rowconfigure(0, weight=1)
 container.grid_columnconfigure(0, weight=1)
 
+# Creating Frames
+
 # Frame 1 (Login Page)
 frame1 = tk.Frame(container, bg="#FFFFFF")
 frame1.grid(row=0, column=0, sticky="nsew")
@@ -59,14 +60,14 @@ frame2.grid(row=0, column=0, sticky="nsew")
 # Frame 3 (Add Records)
 frame3 = tk.Frame(container, bg="#FFFFFF")
 frame3.grid(row=0, column=0, sticky="nsew")
+
 # Frame 4 (Edit Records)
 frame4 = tk.Frame(container, bg="#FFFFFF")
 frame4.grid(row=0, column=0, sticky="nsew")
 
-#Frame 5 (Remove Record)
+# Frame 5 (Remove Record)
 frame5 = tk.Frame(container, bg="#FFFFFF")
 frame5.grid(row=0, column=0, sticky="nsew")
-
 
 
 # Frame 7 (Search Record)
@@ -84,14 +85,7 @@ canvas1 = tk.Canvas(
     relief="ridge"
 )
 canvas1.place(x=0, y=0)
-canvas1.create_rectangle(
-    431.0,
-    0.0,
-    862.0,
-    519.0,
-    fill="#FFD6D6",
-    outline=""
-)
+canvas1.create_rectangle(431.0,0.0,862.0,519.0,fill="#FFD6D6",outline="")
 
 canvas1.create_text(
     14.0,
@@ -111,7 +105,7 @@ def enter_data():
         show_frame(frame2)
     else:
         messagebox.showerror(title="Error", message="Invalid Username and/or Password")
-        show_frame(frame3)
+        
 
 
 Login_button_image = tk.PhotoImage(file=relative_to_assets("Login button.png"))
